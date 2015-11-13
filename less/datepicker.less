@@ -199,8 +199,10 @@
 	}
 }
 .input-append,
+[data-provide="datepicker"],
 .input-prepend {
-	&.date .add-on {
+	&.date .add-on,
+	+.add-on {
 		cursor: pointer;
 
 		i {
@@ -234,4 +236,12 @@
 		margin-left: -5px;
 		margin-right: -5px;
 	}
+}
+[data-provide="datepicker"] {
+  &[disabled],
+  &[readonly] {
+    +.input-group-addon {
+      pointer-events: none;
+    }
+  }
 }
